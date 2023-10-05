@@ -244,7 +244,7 @@ class GlueConnection:
             logger.debug(f"reuse session, do not stop_session for {self.session_id} in {self.state} state")
             return
         for elapsed in wait(1):
-            if self.state not in [GlueSessionState.PROVISIONING, GlueSessionState.READY , GlueSessionState.STOPPING]:
+            if self.state not in [GlueSessionState.PROVISIONING, GlueSessionState.READY]:
                 return
             logger.debug(f"[elapsed {elapsed}s - calling stop_session for {self.session_id} in {self.state} state")
             try:
