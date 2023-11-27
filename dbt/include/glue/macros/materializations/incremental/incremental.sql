@@ -26,7 +26,7 @@
 
   {% set target_relation = this %}
   {% set existing_relation_type = adapter.get_table_type(target_relation)  %}
-  {% set tmp_relation = make_temp_relation(target_relation, '_tmp' ~ range(0, 100000) | random | string)) %}
+  {% set tmp_relation = make_temp_relation(target_relation, '_tmp' ~ range(0, 100000) | random | string) %}
   {% set is_incremental = 'False' %}
   {% set lf_tags_config = config.get('lf_tags_config') %}
   {% set lf_grants = config.get('lf_grants') %}
